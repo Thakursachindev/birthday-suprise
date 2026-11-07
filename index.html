@@ -1,0 +1,262 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff4f7">
+  <title>For My GUGU ❤️</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <audio id="backgroundMusic" src="music.mp3" loop preload="none"></audio>
+
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Start">♡ FOR MY GUGU</a>
+    <div class="header-right">
+      <span id="stepCounter">SURPRISE 1 OF 8</span>
+      <button id="musicToggle" class="music-toggle" type="button" aria-label="Toggle music">♫ <span>Music</span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page active hero" id="home" data-step="1">
+      <div class="eyebrow">A LITTLE SURPRISE, MADE JUST FOR YOU</div>
+      <div class="hero-orbit"><span class="orbit-heart">♡</span><span class="orbit-star">✦</span></div>
+      <p class="kicker">READY, MY GUGU?</p>
+      <h1>I've made little<br><em>Surprise</em> for GUGU.</h1>
+      <p class="intro">I've planned a little surprise for you ❤️.</p>
+      <div class="archery" id="archery">
+        <div class="target-heart" id="targetHeart" aria-hidden="true">❤️</div>
+        <button class="arrow-button" id="shootArrow" type="button" aria-label="Shoot the arrow">🏹</button>
+      </div>
+      <p class="hint" id="archeryHint">Tap the arrow to begin our little adventure.</p>
+      <button class="btn" id="continueButton" type="button" disabled>Unlock our magical tree <span>→</span></button>
+      <div class="scroll-note">A LITTLE LOVE IS ON ITS WAY</div>
+    </section>
+
+    <section class="page tree-section" id="tree" data-step="2" aria-hidden="true">
+      <div class="section-tag">02 / OUR LITTLE WORLD</div>
+      <div class="tree-layout">
+        <div class="tree-scene">
+          <div class="animated-tree" id="animatedTree">
+            <div class="tree-trunk"></div>
+            <div class="tree-branch branch-one"></div>
+            <div class="tree-branch branch-two"></div>
+            <div class="tree-branch branch-three"></div>
+            <div class="tree-branch branch-four"></div>
+            <div class="tree-leaves" id="treeLeaves"></div>
+            <div class="tree-heart">♥</div>
+          </div>
+        </div>
+        <div class="tree-message reveal-content">
+          <p class="eyebrow">A LITTLE WORLD MADE FOR YOU</p>
+          <h2>GUGU,<br><em>you make life bloom.</em></h2>
+          <p>Like a tree that grows a little more each day, my happiness grows with every moment that has you in it.</p>
+          <button class="btn next-btn" data-next="gallery" type="button" disabled>See our memories <span>→</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="page gallery-section" id="gallery" data-step="3" aria-hidden="true">
+      <div class="section-tag">03 / LITTLE MOMENTS, BIG FEELINGS</div>
+      <p class="eyebrow">ONE MEMORY AT A TIME</p>
+      <h2>Our beautiful <em>memories</em></h2>
+      <p class="section-intro">Take your time,princess Read every word with your heart, just as I wrote each one with mine</p>
+
+      <!-- <div class="memory-card">
+        <div class="photo-frame">
+          <img id="memoryPhoto" src="photos/photo1.jpg" alt="Our memory 1">
+          <div class="photo-placeholder" id="photoPlaceholder">
+            YOUR PHOTO<br>
+            <small>"<photos>
+            <photo1 class="jpg"></photo1></small>
+          </div>
+          <span class="photo-number" id="photoNumber">01 / 06</span>
+        </div>
+        <div class="memory-caption">
+          <span class="caption-label">MEMORY NO. <b id="captionNumber">01</b></span>
+          <h3 id="memoryTitle">A MEMORY</h3>
+          <p id="memoryText"> tHUS Some moments become precious simply because they're shared with you.</p>
+        </div>
+      </div> -->
+      <div class="memory-card">
+  <div class="photo-frame">
+
+    <!-- Memory Photos -->
+    <img
+      id="memoryPhoto"
+      src="photos/photo1.jpg"
+      alt="Our memory 1"
+      onerror="this.style.display='none';"
+    >
+
+    <!-- Photo Number -->
+    <span class="photo-number" id="photoNumber">01 / 06</span>
+
+  </div>
+
+  <!-- Memory Caption -->
+  <div class="memory-caption">
+
+    <span class="caption-label">
+      MEMORY NO. <b id="captionNumber">01</b>
+    </span>
+
+    <h3 id="memoryTitle">A MEMORY</h3>
+
+    <p id="memoryText">
+      Thus, some moments become precious simply because they're shared with you.
+    </p>
+
+  </div>
+</div>
+
+      <div class="gallery-controls">
+        <button class="btn btn-light" id="previousPhoto" type="button" disabled>← Previous</button>
+        <span class="dots" id="photoDots" aria-label="Photo progress"></span>
+        <button class="btn" id="nextPhoto" type="button">Next memory →</button>
+      </div>
+
+      <p class="unlock-note" id="galleryUnlockNote">View all 6 memories to unlock the next surprise.</p>
+      <button class="btn next-btn" data-next="gift" id="galleryContinue" type="button" disabled>Open your surprises <span>→</span></button>
+    </section>
+
+    <section class="page gift-section" id="gift" data-step="4" aria-hidden="true">
+      <div class="section-tag">04 / LITTLE BOXES OF LOVE</div>
+      <p class="eyebrow">PICK A BOX, MY GUGU</p>
+      <h2>Three little <em>surprises</em></h2>
+      <p class="section-intro">Tap every gift to discover the message hiding inside.</p>
+
+      <div class="gift-grid">
+        <button class="gift-card" type="button" data-gift="0">
+          <span class="gift-icon">🎁</span><b>Open me</b><small>A little reminder</small>
+        </button>
+        <button class="gift-card" type="button" data-gift="1">
+          <span class="gift-icon">🎀</span><b>Open me</b><small>A little promise</small>
+        </button>
+        <button class="gift-card" type="button" data-gift="2">
+          <span class="gift-icon">💝</span><b>Open me</b><small>A little wish</small>
+        </button>
+      </div>
+
+      <p class="gift-progress" id="giftProgress">0 of 3 surprises opened</p>
+      <button class="btn next-btn" data-next="photo" id="giftContinue" type="button" disabled>One more special memory <span>→</span></button>
+    </section>
+
+    <section class="page feature-section" id="photo" data-step="5" aria-hidden="true">
+      <div class="section-tag">05 / MY FAVOURITE VIEW</div>
+      <p class="eyebrow">THE PHOTO THAT MAKES ME SMILE</p>
+      <h2>This feels like <em>home.</em></h2>
+      <div class="polaroid">
+        <img src="photos/fav1.jpg" alt="My favourite photo with you">
+        <p>My favourite person. My favourite feeling. ♡</p>
+      </div>
+      <p class="section-intro">A picture may hold a moment, but the feeling stays with me.</p>
+      <button class="btn next-btn" data-next="letter" type="button">Read my letter <span>→</span></button>
+    </section>
+
+    <section class="page letter-section" id="letter" data-step="6" aria-hidden="true">
+      <div class="section-tag">06 / SOMETHING FROM MY HEART</div>
+      <p class="eyebrow">A FEW WORDS FOR YOU</p>
+      <h2>A letter for <em>GUGU</em></h2>
+      <article class="letter">
+        <p>My favourite person,</p>
+        <p>I don't always know how to put my feelings into words, but I hope you know how much you mean to me. You make ordinary days feel special, and even the smallest moments become memories I want to keep.</p>
+        <p>Thank you for being exactly who you are.</p>
+        <p>No matter how many birthdays come and go, I hope you never forget how loved and appreciated you are.</p>
+        <p>And I'm truly sorry for making last year's birthday less special. You deserved better. 🤍</p>
+        <p class="signature">With all my love, ♡</p>
+      </article>
+      <label class="read-confirm"><input type="checkbox" id="letterRead"> I've read every word ♡</label>
+      <button class="btn next-btn" data-next="voice" id="letterContinue" type="button" disabled>Listen to my voice note <span>→</span></button>
+    </section>
+          <section class="page voice-section" id="voice" data-step="7" aria-hidden="true">
+
+  <div class="section-tag">07 / A VOICE JUST FOR YOU</div>
+
+  <p class="eyebrow">LISTEN WHENEVER YOU MISS ME</p>
+
+  <h2>A little voice <em>note</em></h2>
+
+  <p class="section-intro">
+    Whenever you miss me, just press play.
+    This little voice note is always here for you. ❤️
+  </p>
+
+  <div class="audio-card">
+
+    <div class="headphone">🎧</div>
+
+    <p>My voice, just for you ❤️</p>
+
+    <audio id="audioPlayer" controls
+           onended="document.getElementById('voiceContinue').disabled = false">
+
+      <source src="voice.mp3" type="audio/mpeg">
+
+      Your browser does not support audio playback.
+
+    </audio>
+
+    <div class="audio-progress">
+      <span id="audioProgress"></span>
+    </div>
+
+  </div>
+
+  <button class="btn next-btn"
+          data-next="final"
+          id="voiceContinue"
+          type="button"
+          disabled>
+    One last surprise <span>→</span>
+  </button>
+
+</section>
+
+    <!-- <section class="page voice-section" id="voice" data-step="7" aria-hidden="true">
+      <div class="section-tag">07 / A VOICE JUST FOR YOU</div>
+      <p class="eyebrow">LISTEN WHENEVER YOU MISS ME</p>
+      <h2>A little voice <em>note</em></h2>
+      <p class="section-intro">Add your recording below. The final surprise unlocks after the recording has played to the end.</p>
+      <div class="audio-card">
+        <div class="headphone">🎧</div>
+        <label class="btn btn-light upload-label" for="voiceUpload">Choose your voice note</label>
+        <input type="file" id="voiceUpload" accept="audio/*">
+        <p id="voiceStatus">No voice note selected yet.</p>
+        <audio id="audioPlayer" controls></audio>
+        <div class="audio-progress"><span id="audioProgress"></span></div>
+      </div>
+      <button class="btn next-btn" data-next="final" id="voiceContinue" type="button" disabled>One last surprise <span>→</span></button>
+    </section> -->
+
+    <section class="page final-section" id="final" data-step="8" aria-hidden="true">
+      <div class="final-confetti" aria-hidden="true">✦　♡　✧　♡　✦</div>
+      <div class="final-heart">♥</div>
+      <p class="eyebrow">AND THAT'S NOT EVEN ALL...</p>
+      <h2>Happy Birthday,<br><em>my GUGU!</em></h2>
+      <p class="final-copy">I hope your day is as beautiful, warm, and wonderful as the happiness you bring into my life.</p>
+      <p class="final-signature">Today, tomorrow, and all the little moments in between. ♡</p>
+      <button class="btn" id="restartButton" type="button">Relive our story ↺</button>
+    </section>
+  </main>
+
+  <footer>MADE WITH LOVE, JUST FOR YOU ♥</footer>
+
+  <div class="modal-backdrop" id="giftModal" aria-hidden="true">
+    <div class="gift-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="closeGiftModal" type="button" aria-label="Close">×</button>
+      <div class="modal-sparkle">✧</div>
+      <p class="eyebrow">A LITTLE MESSAGE FOR YOU</p>
+      <h2 id="modalTitle">A reminder</h2>
+      <p id="modalMessage"></p>
+      <button class="btn" id="modalDone" type="button">Keep this in my heart ♡</button>
+    </div>
+  </div>
+
+  <div class="flower-layer" id="flowerLayer" aria-hidden="true"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
